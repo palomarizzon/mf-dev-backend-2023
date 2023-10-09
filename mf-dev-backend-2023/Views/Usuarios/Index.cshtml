@@ -1,10 +1,10 @@
-﻿@model IEnumerable<mf_dev_backend_2023.Models.Veiculo>
+﻿@model IEnumerable<mf_dev_backend_2023.Models.Usuario>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Usuários</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -16,13 +16,7 @@
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Placa)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AnoFabricacao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AnoModelo)
+                @Html.DisplayNameFor(model => model.Perfil)
             </th>
             <th></th>
         </tr>
@@ -31,16 +25,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                <a asp-action="Relatorio" asp-route-id="@item.Id">@item.Nome</a>
+                @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Placa)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AnoFabricacao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AnoModelo)
+                @Html.DisplayFor(modelItem => item.Perfil)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
